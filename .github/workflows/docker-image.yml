@@ -15,6 +15,15 @@ jobs:
     runs-on: alpine-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag DigGrass:$(date +%s)
+      - name: Docker login
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.GRASS_USER }}
+          password: ${{ secrets.GRASS_PASS }} 
+      - name: Build the Docker image
+        run: docker build --file ./Dockerfile -t ${{ secrets.GRASS_USER }}/diggrass:latest .
+      - name: Docker image push
+        run: docker push ${{ secrets.GRASS_USER }}/diggrass:latest
+            
+
+                    
