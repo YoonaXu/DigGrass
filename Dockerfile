@@ -7,6 +7,6 @@ RUN apk add --update --no-cache py3-pip
 WORKDIR /usr/src/app
 COPY src .
 RUN pip install --no-cache-dir -r ./requirements.txt --break-system-packages
-
+RUN python download-extension.py
 CMD [ "python", "./main.py" ]
-EXPOSE 80
+EXPOSE 8666
