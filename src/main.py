@@ -209,5 +209,5 @@ def get():
     return {'connected': connected, 'network_quality': network_quality, 'epoch_earnings': epoch_earnings}
 
 
-app.run(host='0.0.0.0',port=80, debug=False)
+app.run(host='0.0.0.0',port=8666, debug=False)
 driver.quit()
