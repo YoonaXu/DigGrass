@@ -19,7 +19,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ vars.GRASS_USER }}
-          password: ${{ vars.GRASS_PASS }} 
+          password: ${{ secrets.GRASS_PASS }} 
       - name: Build the Docker image
         run: docker build --file ./Dockerfile -t ${{ secrets.GRASS_USER }}/diggrass:latest .
       - name: Docker image push
