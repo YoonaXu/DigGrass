@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: test env
-        run: echo "hello" && ls -al
+        run: echo "hello" && ls -al && echo "${{ secrets.GRASS_USER }}"
       - name: Docker login
         uses: docker/login-action@v3
         with:
