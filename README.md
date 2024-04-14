@@ -1,3 +1,4 @@
+[![Build and Deploy](https://github.com/YoonaXu/DigGrass/actions/workflows/docker-image.yml/badge.svg)](https://github.com/YoonaXu/DigGrass/actions/workflows/docker-image.yml)
 # 挖草
 非官方挖草镜像 [getgrass.io](https://app.getgrass.io/register/?referralCode=TjuqlvK2HwffKxf)
 可在Dockerhub上获得 [Docker Hub](https://hub.docker.com/r/yoonaxu/diggrass)
