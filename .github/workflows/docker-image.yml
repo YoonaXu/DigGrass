@@ -15,13 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: test env
-        run: echo "hello" && ls -al && echo "${{ vars.GRASS_USER }}"
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.GRASS_USER }}
-          password: ${{ secrets.GRASS_PASS }} 
+          username: ${{ vars.GRASS_USER }}
+          password: ${{ vars.GRASS_PASS }} 
       - name: Build the Docker image
         run: docker build --file ./Dockerfile -t ${{ secrets.GRASS_USER }}/diggrass:latest .
       - name: Docker image push
