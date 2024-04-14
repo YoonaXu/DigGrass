@@ -21,7 +21,7 @@ jobs:
           username: ${{ vars.GRASS_USER }}
           password: ${{ secrets.GRASS_PASS }} 
       - name: Build the Docker image
-        run: docker build --file ./Dockerfile -t ${{ secrets.GRASS_USER }}/diggrass:latest .
+        run: docker build --file ./Dockerfile -t ${{ vars.GRASS_USER }}/diggrass:latest .
       - name: Docker image push
         run: docker push ${{ secrets.GRASS_USER }}/diggrass:latest
             
